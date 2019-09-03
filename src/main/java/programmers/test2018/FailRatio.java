@@ -50,15 +50,19 @@ public class FailRatio {
         Collections.sort(list, new Comparator<Map.Entry<Integer, Double>>() {
             @Override
             public int compare(Map.Entry<Integer, Double> o1, Map.Entry<Integer, Double> o2) {
-                return o1.getValue() - o2.getValue() > 0 ? -1 : 1;
+                if (o1.getValue() - o2.getValue() > 0) {
+                    return -1;
+                } else if (o1.getValue() - o2.getValue() < 0) {
+                    return 1;
+                } else {
+                    return 0; /* 0 리턴의 경우를 정의하지 않았어서 정확도 100이 나오지 못했다 */
+                }
             }
         });
 
         for (int i=0; i<N; i++) {
             answer[i] = ((Map.Entry<Integer, Double>) list.get(i)).getKey();
         }
-
-        /* 정확도 88.9 */
 
         return answer;
     }
