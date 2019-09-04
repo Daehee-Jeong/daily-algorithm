@@ -1,5 +1,6 @@
 package programmers;
 
+import programmers.test2018.CandidateKey;
 import programmers.test2018.FailRatio;
 
 import java.util.ArrayList;
@@ -16,9 +17,20 @@ public class Main {
         int result = lcm.solution(new int[]{2, 6, 8, 10});
         System.out.println("result is " + result);*/
 
-        FailRatio ratio = new FailRatio();
-//        int[] result = ratio.solution(5, new int[]{2, 1, 2, 6, 2, 4, 3, 3});
+        /*FailRatio ratio = new FailRatio();
+        int[] result = ratio.solution(5, new int[]{2, 1, 2, 6, 2, 4, 3, 3});
         int[] result = ratio.solution(4, new int[]{4, 4, 4, 4, 4});
-        System.out.println(Arrays.toString(result));
+        System.out.println(Arrays.toString(result));*/
+
+        String[][] arr = new String[][]{
+            {"100","ryan","music","2"},
+            {"200","apeach","math","2"},
+            {"300","tube","computer","3"},
+            {"400","con","computer","4"},
+            {"500","muzi","music","3"},
+            {"600","apeach","music","2"}
+        };
+        CandidateKey ck = new CandidateKey();
+        ck.solution(arr);
     }
 }
