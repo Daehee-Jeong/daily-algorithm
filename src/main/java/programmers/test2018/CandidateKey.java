@@ -21,6 +21,7 @@ public class CandidateKey {
 
         boolean[] visited = new boolean[columnCount];
 
+        /* 조합(Combination)을 이용해 후보키의 검증대상이 되는 모든 컬럼조합을 구해낸다 */
         for(int i=1; i<=columnCount; i++) {
             combination(columnNumber, visited, 0, columnCount, i);
         }
