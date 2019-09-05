@@ -23,14 +23,21 @@ public class Main {
         System.out.println(Arrays.toString(result));*/
 
         String[][] arr = new String[][]{
+//            {"100","ryan","music","2"},
+//                {"200","apeach","math","2"},
+//                {"300","tube","computer","3"},
+//                {"400","con","computer","4"},
+//                {"500","muzi","music","3"},
+//                {"600","apeach","music","2"}
+
             {"100","ryan","music","2"},
-            {"200","apeach","math","2"},
-            {"300","tube","computer","3"},
-            {"400","con","computer","4"},
-            {"500","muzi","music","3"},
-            {"600","apeach","music","2"}
+                {"200","apeach","math","2"},
+                {"300","tube","computer","3"},
+                {"100","con","computer","4"},
+                {"200","muzi","music","3"},
+                {"300","apeach","music","2"}
         };
         CandidateKey ck = new CandidateKey();
-        ck.solution(arr);
+        System.out.println(ck.solution(arr));
     }
 }

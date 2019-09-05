@@ -41,7 +41,7 @@ public class CandidateKey {
             for (int j=0; j<recordCount; j++) {
                 String key = "";
                 for (int k=0; k<caseColumns.length; k++) {
-                    key += relation[j][Integer.parseInt(caseColumns[k])];
+                    key += (relation[j][Integer.parseInt(caseColumns[k])] + "_");
                 }
                 set.add(key);
             }
