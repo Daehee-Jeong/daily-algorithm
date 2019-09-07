@@ -2,6 +2,7 @@ package programmers;
 
 import programmers.test2018.CandidateKey;
 import programmers.test2018.FailRatio;
+import programmers.test2019.ZippedString;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -22,22 +23,20 @@ public class Main {
         int[] result = ratio.solution(4, new int[]{4, 4, 4, 4, 4});
         System.out.println(Arrays.toString(result));*/
 
-        String[][] arr = new String[][]{
-//            {"100","ryan","music","2"},
-//                {"200","apeach","math","2"},
-//                {"300","tube","computer","3"},
-//                {"400","con","computer","4"},
-//                {"500","muzi","music","3"},
-//                {"600","apeach","music","2"}
-
+        /*String[][] arr = new String[][]{
             {"100","ryan","music","2"},
                 {"200","apeach","math","2"},
                 {"300","tube","computer","3"},
-                {"100","con","computer","4"},
-                {"200","muzi","music","3"},
-                {"300","apeach","music","2"}
+                {"400","con","computer","4"},
+                {"500","muzi","music","3"},
+                {"600","apeach","music","2"}
         };
         CandidateKey ck = new CandidateKey();
-        System.out.println(ck.solution(arr));
+        System.out.println(ck.solution(arr));*/
+
+        ZippedString zs = new ZippedString();
+//        zs.solution("aabbaccc");
+//        zs.solution("ababcdcdababcdcd");
+        zs.solution("abcabcabcabcdededededede");
     }
 }
