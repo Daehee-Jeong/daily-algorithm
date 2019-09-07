@@ -35,8 +35,11 @@ public class Main {
         System.out.println(ck.solution(arr));*/
 
         ZippedString zs = new ZippedString();
-//        zs.solution("aabbaccc");
-//        zs.solution("ababcdcdababcdcd");
-        zs.solution("abcabcabcabcdededededede");
+        System.out.println(zs.solution("aabbaccc"));
+//        System.out.println(zs.solution("acsxadvscdxavscdxavscdxscxdavscxdavcsxdvacs"));
+//        zs.solution("ababcdcdababcdcd")
+//        System.out.println(zs.solution("abcabcabcabcdededededede"));
+//        System.out.println(zs.solution("ababcdcdxababcdcd"));
+//          System.out.println(zs.solution("xababcdcdababcdcd"));
     }
 }
