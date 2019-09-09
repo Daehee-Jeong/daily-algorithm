@@ -23,7 +23,7 @@ public class Main {
         int[] result = ratio.solution(4, new int[]{4, 4, 4, 4, 4});
         System.out.println(Arrays.toString(result));*/
 
-        /*String[][] arr = new String[][]{
+        String[][] arr = new String[][]{
             {"100","ryan","music","2"},
                 {"200","apeach","math","2"},
                 {"300","tube","computer","3"},
@@ -32,14 +32,15 @@ public class Main {
                 {"600","apeach","music","2"}
         };
         CandidateKey ck = new CandidateKey();
-        System.out.println(ck.solution(arr));*/
+        System.out.println(ck.solution(arr));
 
-        ZippedString zs = new ZippedString();
-        System.out.println(zs.solution("aabbaccc"));
+//        ZippedString zs = new ZippedString();
+//        System.out.println(zs.solution("aabbaccc"));
 //        System.out.println(zs.solution("acsxadvscdxavscdxavscdxscxdavscxdavcsxdvacs"));
 //        zs.solution("ababcdcdababcdcd")
-//        System.out.println(zs.solution("abcabcabcabcdededededede"));
+//        System.out.println(zs.solution("ababcdcdababcdcd"));
 //        System.out.println(zs.solution("ababcdcdxababcdcd"));
 //          System.out.println(zs.solution("xababcdcdababcdcd"));
+//        System.out.println(zs.solution("abcabcabcabcdedededededeabcabcabcabcdedededededeabcabcabcabcdedededededeabcabcabcabcdedededededeabcabcabcabcdedededededeabcabcabcabcdedededededeabcabcabcabcdededededede"));
     }
 }

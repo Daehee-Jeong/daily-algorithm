@@ -9,7 +9,9 @@ public class ZippedString {
         int wordLength = s.length();
         int maxSplitLength = s.length() / 2;
 
-        int totalWordEqualCount = 0;
+        if (maxSplitLength == 0) return 1;
+
+
 
         int[] zippedStringLengthArray = new int[maxSplitLength];
 
@@ -17,6 +19,9 @@ public class ZippedString {
             String zippedString = "";
             int currentSplitCount = i;
             System.out.println("split count is " + currentSplitCount);
+            boolean isValid = true;
+
+            int totalWordEqualCount = 0;
 
             for (int j=0; j<s.length();) {
                 System.out.println("[j] is " + j);
@@ -38,12 +43,23 @@ public class ZippedString {
                     System.out.println("backWord is " + backWord);
 
                     if (frontWord.equals(backWord)) {
+                        totalWordEqualCount++;
                         System.out.println(frontWord + " equals " + backWord);
 
                         counting++;
                         k+=currentSplitCount;
                     } else {
                         System.out.println(frontWord + " not equals " + backWord);
+
+                        System.out.println("totalWordEqualCount : " + totalWordEqualCount);
+                        System.out.println("j : " + j);
+                        System.out.println("s.substring(0, j).length() : " + s.substring(0, j).length());
+                        System.out.println("currentSplitCount : " + currentSplitCount);
+                        if (totalWordEqualCount ==0 && s.substring(0, j).length() != currentSplitCount) {
+                            System.out.println("invalid : ");
+                            isValid = false;
+                        }
+
                         break;
                     }
                     System.out.println("");
@@ -59,7 +75,12 @@ public class ZippedString {
 
             } // outer for
 
-            zippedStringLengthArray[i-1] = zippedString.length();
+            if (isValid) {
+                zippedStringLengthArray[i-1] = zippedString.length();
+            } else {
+                zippedStringLengthArray[i-1] = s.length();
+            }
+//            zippedStringLengthArray[i-1] = zippedString.length();
 
 //            if (zippedString.charAt(0) >= 'a' && zippedString.charAt(0) <= 'z') {
 //                zippedStringLengthArray[i-1] = s.length();
@@ -112,3 +133,67 @@ public class ZippedString {
         return answer;
     }
 }
+
+/*
+class Solution {
+    public int solution(String s) {
+        int answer = 0;
+        int maxSplitLength = s.length() / 2;
+
+        if (maxSplitLength == 0) return 1;
+
+        int[] zippedStringLengthArray = new int[maxSplitLength];
+
+        for (int i=1; i<=maxSplitLength; i++) {
+            String zippedString = "";
+            int currentSplitCount = i;
+
+            for (int j=0; j<s.length();) {
+                int counting = 1;
+
+                String frontWord = "";
+                String backWord = "";
+
+                for (int k=j+currentSplitCount; k<s.length();) {
+
+                    frontWord = s.substring(j, j+currentSplitCount);
+
+                    if (k+currentSplitCount > s.length()) break;
+
+                    backWord = s.substring(k, k+currentSplitCount);
+
+                    if (frontWord.equals(backWord)) {
+                        counting++;
+                        k+=currentSplitCount;
+                    } else {
+                        break;
+                    }
+                } // inner for
+
+                if (counting > 1) {
+                    zippedString += (counting + frontWord);
+                    j += (currentSplitCount * (counting));
+                } else {
+                    zippedString += s.substring(j, j+1);
+                    j++;
+                }
+
+            } // outer for
+
+            if (zippedString.charAt(0) >= 'a' && zippedString.charAt(0) <= 'z') {
+                zippedStringLengthArray[i-1] = s.length();
+            } else {
+                zippedStringLengthArray[i-1] = zippedString.length();
+            }
+        }
+
+        answer = Integer.MAX_VALUE;
+        for (int i=0; i<zippedStringLengthArray.length; i++) {
+            if (answer > zippedStringLengthArray[i] && zippedStringLengthArray[i] != 0)
+                answer = zippedStringLengthArray[i];
+        }
+
+        return answer;
+    }
+}
+ */

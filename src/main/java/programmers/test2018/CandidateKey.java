@@ -63,7 +63,7 @@ public class CandidateKey {
 //            }
 //        }
 
-        for (int i=0; i<candidateKeyList.size(); i++) {
+        for (int i=0; i<candidateKeyList.size()-1; i++) {
             String str = candidateKeyList.get(i);
             for (int j=1+i; j<candidateKeyList.size(); j++) {
                 if (candidateKeyList.get(j).indexOf(str) >= 0) {
