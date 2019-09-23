@@ -1,10 +1,9 @@
 package baekjoon;
 
-import java.io.BufferedInputStream;
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.StringReader;
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.PriorityQueue;
+import java.util.Scanner;
 
 public class Quiz7662 {
 
@@ -34,17 +33,54 @@ public class Quiz7662 {
      * EMPTY
      * 333 -45
      */
-    public String solution(String input) {
+    public String solution() {
 
+        PriorityQueue<Integer> ascQueue = new PriorityQueue<Integer>();
+        PriorityQueue<Integer> descQueue = new PriorityQueue<Integer>(Collections.reverseOrder());
 
+        Scanner sc = new Scanner(System.in);
+        final int T = Integer.parseInt(sc.nextLine());
 
-        String[] lines = input.split(System.getProperty("line.separator"));
+        String readLine = null;
+        while( (readLine = sc.nextLine()) != null ) {
+            if (isNumber(readLine)) {
+                for (int i=0; i<Integer.parseInt(readLine); i++) {
+                    String line = sc.nextLine();
+                    String inputType = line.split(" ")[0];      // "I" or "D"
+                    int num = Integer.parseInt(line.split(" ")[1]);
 
-        final int T = Integer.valueOf(lines[0]);
+                    if ("I".equals(inputType)) {
+                        System.out.println("Insert: " + num);
+                        ascQueue.add(num);
+                    } else if ("D".equals(inputType)) {
+                        System.out.println("Delete: " + num);
+                        if (num == 1) {
+                            descQueue = new PriorityQueue<Integer>(ascQueue.size(), Collections.reverseOrder());
+                            descQueue.addAll(ascQueue);
+                            descQueue.poll();
 
-        PriorityQueue<Integer> pQueue = new PriorityQueue<>();
-        BufferedReader reader = new BufferedReader(new StringReader(input));
+                            ascQueue = new PriorityQueue<Integer>(descQueue.size());
+                            ascQueue.addAll(descQueue);
+                        } else if (num == -1) {
+                            ascQueue.poll();
+                        }
+                    }
+                } // parseLine loop
+            }
+        } // readLine loop
 
-        return null;
+        String result = Arrays.toString(ascQueue.stream().toArray());
+
+        return result;
+    }
+
+    private boolean isNumber(String numStr) {
+        try {
+            Integer.parseInt(numStr);
+        } catch (NumberFormatException e) {
+            e.printStackTrace();
+            return false;
+        }
+        return true;
     }
 }
