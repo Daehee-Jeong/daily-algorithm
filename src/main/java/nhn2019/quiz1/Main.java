@@ -1,34 +1,40 @@
-package nhn2019.quiz1;//Please don't change class name 'Main'
+package nhn2019.quiz1;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
-import java.util.TreeSet;
-import java.util.stream.Collectors;
+import java.util.HashSet;
 
 class Main {
     public static void main(String[] args) throws Exception {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         String input = br.readLine();
 
-        int num = Integer.parseInt(input);
+        int N = Integer.parseInt(input);
+        String[] cards = br.readLine().split(" ");
 
-        TreeSet<Integer> treeSet = new TreeSet<>();
+        String resultFlag = "N";
+        int lastCardCount = N;
 
-        for (int i = 1; i < num; i++) {
-            if (treeSet.contains(i))
-                break;
+        HashSet<String> cardSet = new HashSet<>();
+        int distinctCardCount = 0;
 
-            if (num % i == 0) {
-                treeSet.add(i);
-                treeSet.add(num / i);
-            }
+        for (int i = 0; i < cards.length; i++) {
+            cardSet.add(cards[i]);
         }
 
-        String result = treeSet.stream()
-                .map(String::valueOf)
-                .collect(Collectors.joining(" "));
+        distinctCardCount = cardSet.size();
 
-        System.out.println(result);
+        if ((N + 1) % distinctCardCount == 0) {
+            resultFlag = "Y";
+            lastCardCount += 1;
+        }
 
+        if (N == distinctCardCount) {
+            resultFlag = "Y";
+        }
+
+        System.out.println(resultFlag);
+        System.out.println(String.valueOf(lastCardCount));
+        System.out.println(distinctCardCount);
     }
 }

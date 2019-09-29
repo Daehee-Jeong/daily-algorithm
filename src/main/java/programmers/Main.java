@@ -51,7 +51,7 @@ public class Main {
         /*Quiz7662 quiz7662 = new Quiz7662();
         quiz7662.solution();*/
 
-        /*Quiz1 quiz1 = new Quiz1();
+        /*Quiz1 test1 = new Quiz1();
         String[] arr = {
             "RECEIVE abcd@naver.com",
             "RECEIVE zzkn@naver.com",
@@ -63,10 +63,10 @@ public class Main {
             "RECEIVE QwerTY@naver.com",
             "SAVE"
         };
-        quiz1.solution(arr);*/
+        test1.solution(arr);*/
 
-//        Quiz1 quiz1 = new Quiz1();
-//        int result = quiz1.solution(new int[]{1, 1, 9, 3, 7, 6, 5, 10}, 4);
+//        Quiz1 test1 = new Quiz1();
+//        int result = test1.solution(new int[]{1, 1, 9, 3, 7, 6, 5, 10}, 4);
 //        System.out.println("result is " + result);
 
 //        Quiz3 quiz3 = new Quiz3();
