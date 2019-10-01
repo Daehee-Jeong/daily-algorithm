@@ -2,7 +2,6 @@ package nhn2019.quiz2;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashSet;
@@ -17,6 +16,7 @@ class Main {
 
         int score[] = new int[playerCount];
 
+        // TODO 팔로워를 참가자별로 Set을 두지 않고 모든참가자의 팔로우 관계에 대한 Map형식으로 다시 구성해보기
         ArrayList<HashSet<Integer>> setList = new ArrayList<>();
         for (int i = 0; i < playerCount; i++) {
             setList.add(new HashSet<>());
