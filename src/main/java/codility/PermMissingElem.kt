@@ -1,0 +1,5 @@
+package codility
+
+class PermMissingElem {
+
+}

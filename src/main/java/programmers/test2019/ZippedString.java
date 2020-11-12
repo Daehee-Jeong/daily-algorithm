@@ -135,7 +135,7 @@ public class ZippedString {
 }
 
 /*
-class Solution {
+class Solution.java {
     public int solution(String s) {
         int answer = 0;
         int maxSplitLength = s.length() / 2;
